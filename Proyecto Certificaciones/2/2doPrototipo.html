@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Gestión de Certificaciones | Homologaciones Técnicas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              graphite: '#090d16',
+              surface: '#0f172a',
+              card: '#131c31',
+              accent: '#2563eb',     // Azul técnico sobrio
+              accentHover: '#1d4ed8',
+              neutralBg: '#f8fafc',
+              borderHairline: '#e2e8f0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-neutralBg text-slate-800 font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200/80 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-slate-900 rounded flex items-center justify-center text-white font-semibold text-sm tracking-widest border border-slate-700">
+          JC
+        </div>
+        <div>
+          <span class="block text-sm font-bold tracking-tight text-slate-900 leading-none">JC GESTIÓN</span>
+          <span class="text-[11px] uppercase font-medium text-slate-500 tracking-wider">Certificaciones Técnicas</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#servicios" class="hover:text-slate-900 transition">Servicios</a>
+        <a href="#productos" class="hover:text-slate-900 transition">Productos</a>
+        <a href="#proceso" class="hover:text-slate-900 transition">Proceso</a>
+        <a href="#faqs" class="hover:text-slate-900 transition">Preguntas Frecuentes</a>
+        <a href="#contacto" class="hover:text-slate-900 transition">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="#contacto" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2.5 rounded transition tracking-wide flex items-center gap-2">
+          <span>Consulta Técnica</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-slate-400"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-slate-900 focus:outline-none" aria-label="Abrir menú">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+      <a href="#servicios" class="mobile-nav-link block py-2 text-slate-700 text-sm font-medium border-b border-slate-100">Servicios</a>
+      <a href="#productos" class="mobile-nav-link block py-2 text-slate-700 text-sm font-medium border-b border-slate-100">Productos</a>
+      <a href="#proceso" class="mobile-nav-link block py-2 text-slate-700 text-sm font-medium border-b border-slate-100">Proceso</a>
+      <a href="#faqs" class="mobile-nav-link block py-2 text-slate-700 text-sm font-medium border-b border-slate-100">Preguntas Frecuentes</a>
+      <a href="#contacto" class="mobile-nav-link block py-2 text-brand-accent text-sm font-semibold">Iniciar Consulta</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION CON CARRUSEL MINIMALISTA ================= -->
+  <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white overflow-hidden bg-brand-graphite">
+    
+    <!-- Contenedor del Carrusel de Fondo -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      
+      <!-- Slide 1 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100 scale-105 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+
+      <!-- Capa de oscurecimiento monocromática minimalista -->
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-graphite via-brand-graphite/95 to-brand-graphite/85"></div>
+      
+      <!-- Trama sutil -->
+      <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    </div>
+
+    <!-- Indicadores mínimos de línea -->
+    <div class="absolute bottom-6 right-8 z-20 flex gap-1.5" id="hero-indicators">
+      <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="w-2 h-0.5 bg-white/20 transition-all duration-300"></span>
+      <span class="w-2 h-0.5 bg-white/20 transition-all duration-300"></span>
+      <span class="w-2 h-0.5 bg-white/20 transition-all duration-300"></span>
+    </div>
+    
+    <!-- Contenido Frontal -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-slate-300 px-3 py-1 rounded text-xs font-mono uppercase tracking-wider backdrop-blur-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+            Aprobación en Aduana y Comercio Interior
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white">
+            Gestión técnica integral de certificaciones para <span class="text-slate-300 underline decoration-slate-600 underline-offset-8">importación y venta</span>.
+          </h1>
+
+          <p class="text-base text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Conformidad técnica y regulatoria ante normas IRAM, resoluciones de Seguridad Eléctrica y disposiciones ENARGAS para una liberación aduanera sin retenciones.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#contacto" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 text-sm font-semibold px-6 py-3 rounded transition shadow-sm">
+              <span>Evaluar Producto</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500"></i>
+            </a>
+            <a href="https://wa.me/5493416914539?text=Hola,%20quisiera%20hacer%20una%20consulta%20técnica%20sobre%20certificaciones." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/5 border border-white/20 px-6 py-3 rounded text-sm font-medium text-slate-300 backdrop-blur-sm transition">
+              <i data-lucide="message-square" class="w-4 h-4 text-slate-400"></i>
+              <span>WhatsApp Directo</span>
+            </a>
+          </div>
+
+          <!-- Métricas Minimalistas -->
+          <div class="pt-8 grid grid-cols-3 gap-6 border-t border-white/10">
+            <div>
+              <p class="text-2xl font-semibold text-white">100%</p>
+              <p class="text-[11px] uppercase tracking-wider text-slate-400 font-mono mt-0.5">Resolución Técnica</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold text-white">IRAM / NAG</p>
+              <p class="text-[11px] uppercase tracking-wider text-slate-400 font-mono mt-0.5">Normas Aplicadas</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold text-white">Nacional</p>
+              <p class="text-[11px] uppercase tracking-wider text-slate-400 font-mono mt-0.5">Alcance Operativo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Lateral de Diagnóstico -->
+        <div class="lg:col-span-5">
+          <div class="bg-brand-surface/75 backdrop-blur-md border border-white/10 rounded p-7 shadow-xl relative">
+            <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">Diagnóstico Normativo</div>
+            <h3 class="text-lg font-medium mb-5 text-white">¿Tu partida requiere ensayos de laboratorio?</h3>
+            
+            <ul class="space-y-4 text-xs text-slate-300 mb-6">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                <span><strong>Seguridad Eléctrica:</strong> Equipos operando entre 50V y 1000V (Res. 169/2018).</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                <span><strong>Eficiencia Energética:</strong> Ensayos de rendimiento y etiquetado obligatorio.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                <span><strong>Gasodomésticos:</strong> Homologación técnica ante ENARGAS para cocinas y anafes.</span>
+              </li>
+            </ul>
+
+            <div class="p-3.5 bg-black/30 rounded border border-white/5 text-[11px] text-slate-400 flex items-center gap-2.5">
+              <i data-lucide="info" class="w-4 h-4 text-slate-400 shrink-0"></i>
+              <span>Evitá el pago de almacenaje fiscal tramitando los protocolos previamente.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section id="servicios" class="py-20 bg-white border-b border-brand-borderHairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-14">
+        <span class="text-xs uppercase tracking-widest font-mono text-slate-500">Servicios Técnicos</span>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mt-1 tracking-tight">Gestión y Homologación Integral</h2>
+        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+          Articulación técnica entre el importador, laboratorios de ensayo acreditados y organismos de certificación reguladores en Argentina.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Servicio 1 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">Res. 169/2018</span>
+            <i data-lucide="zap" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Seguridad Eléctrica</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Gestión completa de certificaciones por Marca, Tipo o Lote para electrodomésticos, fuentes, motores y herramientas eléctricas.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Ensayos bajo normas IRAM e IEC</li>
+            <li>• Adaptación de fichas y espigas planas</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">IRAM Obligatorio</span>
+            <i data-lucide="gauge" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Eficiencia Energética</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Coordinación de pruebas comparativas de consumo y tramitación de la etiqueta oficial de rendimiento energético.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Heladeras, freezers y exhibidoras</li>
+            <li>• Equipos de climatización y motores</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">Normas NAG</span>
+            <i data-lucide="flame" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Gasodomésticos (ENARGAS)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Homologación y ensayos de artefactos a gas natural o licuado. Especialización en equipamiento mixto eléctrico-gas.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Cocinas, anafes y termotanques</li>
+            <li>• Verificación de estanqueidad y combustión</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">Aduana / VUCE</span>
+            <i data-lucide="file-check-2" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Muestras sin Valor Comercial</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Tramitación de constancias y regímenes especiales para ingresar muestras y prototipos destinados a ensayos de laboratorio.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Articulación con despachantes</li>
+            <li>• Autorizaciones previas de embarque</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">Auditorías</span>
+            <i data-lucide="shield-check" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Vigilancia Periódica de Marca</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Mantenimiento técnico de licencias vigentes, control de fábricas y auditorías anuales para evitar la caducidad del certificado.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Auditorías de planta nacional o remota</li>
+            <li>• Control de calidad de fabricación</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="bg-brand-neutralBg p-6 rounded border border-brand-borderHairline hover:border-slate-400 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-200/60 text-slate-700">Preventivo</span>
+            <i data-lucide="search" class="w-5 h-5 text-slate-700"></i>
+          </div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Análisis de Muestra en Origen</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Evaluación técnica de especificaciones de fabricantes extranjeros antes de confirmar órdenes de compra.
+          </p>
+          <ul class="text-[11px] text-slate-500 space-y-1 border-t border-slate-200 pt-3">
+            <li>• Revisión de test reports (CB Scheme)</li>
+            <li>• Verificación de tolerancias técnicas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTOS (TABS MINIMALISTAS) ================= -->
+  <section id="productos" class="py-20 bg-brand-neutralBg border-b border-brand-borderHairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-10">
+        <span class="text-xs uppercase tracking-widest font-mono text-slate-500">Alcance Regulatorio</span>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mt-1 tracking-tight">Rubros y Equipamiento Homologado</h2>
+      </div>
+
+      <!-- Controles de pestañas minimalistas con aspecto de píldora limpia -->
+      <div class="flex flex-wrap gap-2 mb-8" id="tabs-container">
+        <button class="tab-btn active px-4 py-2 rounded text-xs font-semibold tracking-wide transition border border-slate-900 bg-slate-900 text-white" data-target="tab-clima">
+          Climatización & Frío
+        </button>
+        <button class="tab-btn px-4 py-2 rounded text-xs font-semibold tracking-wide transition border border-slate-200 bg-white text-slate-600 hover:border-slate-300" data-target="tab-blanca">
+          Línea Blanca & Cocina
+        </button>
+        <button class="tab-btn px-4 py-2 rounded text-xs font-semibold tracking-wide transition border border-slate-200 bg-white text-slate-600 hover:border-slate-300" data-target="tab-motores">
+          Motores & Componentes
+        </button>
+        <button class="tab-btn px-4 py-2 rounded text-xs font-semibold tracking-wide transition border border-slate-200 bg-white text-slate-600 hover:border-slate-300" data-target="tab-iluminacion">
+          Iluminación & Fuentes
+        </button>
+      </div>
+
+      <!-- Contenido Tab 1: Climatización -->
+      <div id="tab-clima" class="tab-content block">
+        <div class="bg-white rounded p-8 border border-brand-borderHairline grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Refrigeración Comercial y Acondicionadores</h4>
+            <p class="text-slate-600 mb-5 text-xs leading-relaxed">
+              Equipos de uso doméstico y comercial. Gestión de ensayos de seguridad eléctrica (aislaciones y puesta a tierra) y Eficiencia Energética obligatorios para comercialización.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Aires acondicionados (Split, Piso-Techo, Portátiles).
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Exhibidoras comerciales, heladeras y freezers.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Ensayos bajo norma IRAM 2404 / 62411.
+              </div>
+            </div>
+          </div>
+          <div class="bg-slate-50 p-6 rounded border border-slate-100">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-2">Exigencias Aduaneras</div>
+            <p class="text-xs font-semibold text-slate-900 mb-3">Requisitos indispensables:</p>
+            <ul class="text-[11px] text-slate-600 space-y-2 font-mono">
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Certificado de Seguridad Eléctrica (Marca o Lote)</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Constancia de Etiquetado de Eficiencia Energética</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Protocolo de gases refrigerantes autorizados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido Tab 2: Línea Blanca -->
+      <div id="tab-blanca" class="tab-content hidden">
+        <div class="bg-white rounded p-8 border border-brand-borderHairline grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Gasodomésticos y Electrodomésticos</h4>
+            <p class="text-slate-600 mb-5 text-xs leading-relaxed">
+              Homologación para artefactos de cocción, calentamiento de agua y lavado. Asesoramiento en normas ante ENARGAS y ensayos eléctricos complementarios.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Cocinas a gas y anafes combinados o por inducción.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Termotanques y calefones domiciliarios.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Lavavajillas, lavarropas y campanas de extracción.
+              </div>
+            </div>
+          </div>
+          <div class="bg-slate-50 p-6 rounded border border-slate-100">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-2">Exigencias Técnicas</div>
+            <p class="text-xs font-semibold text-slate-900 mb-3">Parámetros clave:</p>
+            <ul class="text-[11px] text-slate-600 space-y-2 font-mono">
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Matrícula de aprobación de modelo ENARGAS</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Ensayo de quemadores y sistemas de corte térmico</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Rigidez dieléctrica y continuidad de tierra</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido Tab 3: Motores -->
+      <div id="tab-motores" class="tab-content hidden">
+        <div class="bg-white rounded p-8 border border-brand-borderHairline grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Motores Eléctricos y Forzadores</h4>
+            <p class="text-slate-600 mb-5 text-xs leading-relaxed">
+              Equipos de ventilación forzada, motores axiales y electrobombas destinadas a integración industrial o repuestos directos.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Motores de inducción monofásicos y trifásicos.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Forzadores axiales para refrigeración comercial.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Bombas sumergibles y bombas periféricas.
+              </div>
+            </div>
+          </div>
+          <div class="bg-slate-50 p-6 rounded border border-slate-100">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-2">Exigencias Técnicas</div>
+            <p class="text-xs font-semibold text-slate-900 mb-3">Ensayos frecuentes:</p>
+            <ul class="text-[11px] text-slate-600 space-y-2 font-mono">
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Rendimiento nominal y factor de potencia</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Aislamiento de bobinado y calentamiento</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Grado de estanqueidad y protección IP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido Tab 4: Iluminación -->
+      <div id="tab-iluminacion" class="tab-content hidden">
+        <div class="bg-white rounded p-8 border border-brand-borderHairline grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h4 class="text-lg font-semibold text-slate-900 mb-2">Luminarias, Drivers y Módulos LED</h4>
+            <p class="text-slate-600 mb-5 text-xs leading-relaxed">
+              Equipamiento de alumbrado público, industrial y comercial. Análisis de compatibilidad electromagnética y seguridad de fuentes switching.
+            </p>
+            <div class="space-y-2 text-xs text-slate-700">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Proyectores y luminarias viales de alta potencia.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Fuentes conmutadas y drivers electrónicos.
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400"></i> Lámparas y tubos LED con etiqueta energética.
+              </div>
+            </div>
+          </div>
+          <div class="bg-slate-50 p-6 rounded border border-slate-100">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-2">Puntos Críticos</div>
+            <p class="text-xs font-semibold text-slate-900 mb-3">Ensayos requeridos:</p>
+            <ul class="text-[11px] text-slate-600 space-y-2 font-mono">
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Elevación de temperatura en componentes clave</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Resistencia al hilo incandescente (materiales)</li>
+              <li class="bg-white p-2.5 rounded border border-slate-200/80">Marcado regulatorio y advertencias técnicas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESO DE TRABAJO ================= -->
+  <section id="proceso" class="py-20 bg-brand-graphite text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-14">
+        <span class="text-xs uppercase tracking-widest font-mono text-slate-400">Metodología</span>
+        <h2 class="text-2xl sm:text-3xl font-semibold mt-1 tracking-tight">Circuito Técnico de Certificación</h2>
+        <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+          Flujo trazable para anticipar observaciones normativas antes del arribo del cargamento.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Paso 1 -->
+        <div class="p-6 rounded bg-brand-surface border border-white/10">
+          <div class="text-slate-400 font-mono text-xs mb-3">01 / ETAPA</div>
+          <h4 class="text-sm font-semibold text-white mb-2">Evaluación Previa</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Revisión de fichas técnicas, esquemas y antecedentes internacionales (test reports CB) antes del embarque.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="p-6 rounded bg-brand-surface border border-white/10">
+          <div class="text-slate-400 font-mono text-xs mb-3">02 / ETAPA</div>
+          <h4 class="text-sm font-semibold text-white mb-2">Ingreso de Muestras</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Tramitación de autorizaciones de importación sin valor comercial para derivación a laboratorios de ensayo.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="p-6 rounded bg-brand-surface border border-white/10">
+          <div class="text-slate-400 font-mono text-xs mb-3">03 / ETAPA</div>
+          <h4 class="text-sm font-semibold text-white mb-2">Ensayos Oficiales</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Seguimiento de pruebas en laboratorio acreditado y asistencia técnica ante eventuales no conformidades.
+          </p>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="p-6 rounded bg-brand-surface border border-white/10">
+          <div class="text-slate-400 font-mono text-xs mb-3">04 / ETAPA</div>
+          <h4 class="text-sm font-semibold text-white mb-2">Emisión & Aduana</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Obtención del certificado de conformidad definitivo y vinculación aduanera para la liberación comercial.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQS ================= -->
+  <section id="faqs" class="py-20 bg-white border-b border-brand-borderHairline">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs uppercase tracking-widest font-mono text-slate-500">Consultas Frecuentes</span>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mt-1 tracking-tight">Preguntas de Importadores y Fabricantes</h2>
+      </div>
+
+      <div class="space-y-3" id="faq-accordion">
+        <!-- FAQ 1 -->
+        <div class="border border-brand-borderHairline rounded overflow-hidden">
+          <button class="faq-toggle w-full px-5 py-4 text-left font-medium text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50 transition" aria-expanded="false">
+            <span>¿Cuál es la diferencia entre certificación por Marca y por Lote?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
+            La <strong>certificación por lote</strong> aplica a una partida única y finita declarada en un despacho específico. La <strong>certificación por marca de conformidad</strong> aprueba el modelo con auditoría de fábrica y permite realizar importaciones sucesivas durante su vigencia, sujeta a auditorías anuales.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-brand-borderHairline rounded overflow-hidden">
+          <button class="faq-toggle w-full px-5 py-4 text-left font-medium text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50 transition" aria-expanded="false">
+            <span>¿Qué ocurre si el producto ya cuenta con marcado CE de Europa?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
+            El marcado CE no exime de las regulaciones nacionales en Argentina. No obstante, contar con reportes de ensayo (Test Reports) bajo esquema internacional CB agiliza la homologación y reduce las pruebas locales obligatorias.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-brand-borderHairline rounded overflow-hidden">
+          <button class="faq-toggle w-full px-5 py-4 text-left font-medium text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50 transition" aria-expanded="false">
+            <span>¿Cómo se ingresa la muestra para que el laboratorio realice el ensayo?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
+            Se gestiona un régimen especial aduanero para muestras sin valor comercial destinadas exclusivamente a laboratorios de ensayo. Tramitamos la constancia previa para su ingreso sin requerir certificado comercial anticipado.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-brand-borderHairline rounded overflow-hidden">
+          <button class="faq-toggle w-full px-5 py-4 text-left font-medium text-sm text-slate-900 flex justify-between items-center hover:bg-slate-50 transition" aria-expanded="false">
+            <span>¿Por qué es fundamental la ficha de enchufe según norma IRAM?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
+            Argentina exige el uso de espigas planas según norma IRAM 2073 (con toma a tierra o aislación clase II). Equipos con fichas tipo Schuko (europea) o estándar estadounidense son retenidos en aduana si no se adapta el cable en origen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FORMULARIO & CONTACTO ================= -->
+  <section id="contacto" class="py-20 bg-brand-neutralBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Info Directa -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs uppercase tracking-widest font-mono text-slate-500">Contacto</span>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mt-1 tracking-tight">Evaluación Preliminar</h2>
+            <p class="text-slate-600 text-xs leading-relaxed mt-2">
+              Envíanos las especificaciones del producto para determinar el marco regulatorio exacto aplicable a tu partida.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <div class="p-4 rounded bg-white border border-brand-borderHairline flex items-center gap-3.5">
+              <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
+              <div>
+                <p class="text-[10px] text-slate-400 font-mono uppercase">WhatsApp / Teléfono</p>
+                <a href="https://wa.me/5493416914539" target="_blank" class="text-xs font-semibold text-slate-900 hover:text-brand-accent transition">
+                  +54 9 341 691-4539
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4 rounded bg-white border border-brand-borderHairline flex items-center gap-3.5">
+              <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
+              <div>
+                <p class="text-[10px] text-slate-400 font-mono uppercase">Correo Directo</p>
+                <a href="mailto:capolongojuan@gmail.com" class="text-xs font-semibold text-slate-900 hover:text-brand-accent transition">
+                  capolongojuan@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4 rounded bg-white border border-brand-borderHairline flex items-center gap-3.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-slate-500"></i>
+              <div>
+                <p class="text-[10px] text-slate-400 font-mono uppercase">Sede</p>
+                <p class="text-xs font-semibold text-slate-900">Rosario, Santa Fe — Cobertura Nacional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario Minimalista -->
+        <div class="lg:col-span-7 bg-white p-7 rounded border border-brand-borderHairline shadow-sm">
+          <h3 class="text-base font-semibold text-slate-900 mb-1">Formulario de Consulta</h3>
+          <p class="text-xs text-slate-500 mb-5">Ingresá los datos del equipo para estructurar el mensaje directo.</p>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="form-nombre" class="block text-[11px] font-mono uppercase text-slate-600 mb-1">Nombre</label>
+                <input type="text" id="form-nombre" required placeholder="Nombre o contacto" class="w-full px-3 py-2 rounded border border-slate-200 text-xs focus:border-slate-800 focus:outline-none bg-slate-50/50">
+              </div>
+              <div>
+                <label for="form-empresa" class="block text-[11px] font-mono uppercase text-slate-600 mb-1">Empresa</label>
+                <input type="text" id="form-empresa" placeholder="Razón social (opcional)" class="w-full px-3 py-2 rounded border border-slate-200 text-xs focus:border-slate-800 focus:outline-none bg-slate-50/50">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="form-rubro" class="block text-[11px] font-mono uppercase text-slate-600 mb-1">Rubro del Producto</label>
+                <select id="form-rubro" class="w-full px-3 py-2 rounded border border-slate-200 text-xs focus:border-slate-800 focus:outline-none bg-slate-50/50 text-slate-700">
+                  <option value="Climatización / Refrigeración">Climatización / Refrigeración</option>
+                  <option value="Electrodomésticos / Línea Blanca">Electrodomésticos / Línea Blanca</option>
+                  <option value="Gasodomésticos (ENARGAS)">Gasodomésticos (ENARGAS)</option>
+                  <option value="Motores o Ventiladores">Motores o Ventiladores</option>
+                  <option value="Iluminación / Fuentes">Iluminación / Fuentes</option>
+                  <option value="Otro tipo de equipo">Otro tipo de equipo</option>
+                </select>
+              </div>
+              <div>
+                <label for="form-estado" class="block text-[11px] font-mono uppercase text-slate-600 mb-1">Estado de Operación</label>
+                <select id="form-estado" class="w-full px-3 py-2 rounded border border-slate-200 text-xs focus:border-slate-800 focus:outline-none bg-slate-50/50 text-slate-700">
+                  <option value="En evaluación previa (Fábrica origen)">En evaluación previa (Fábrica origen)</option>
+                  <option value="Muestra lista para ingresar">Muestra lista para ingresar</option>
+                  <option value="Cargamento en viaje / Aduana">Cargamento en viaje / Aduana</option>
+                  <option value="Fabricante nacional">Fabricante nacional</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="form-mensaje" class="block text-[11px] font-mono uppercase text-slate-600 mb-1">Detalle del Producto o Tensión</label>
+              <textarea id="form-mensaje" rows="4" required placeholder="Modelo, tipo de alimentación o requerimiento puntual..." class="w-full px-3 py-2 rounded border border-slate-200 text-xs focus:border-slate-800 focus:outline-none bg-slate-50/50"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded text-xs tracking-wide transition flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>Enviar Consulta vía WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-graphite text-slate-400 py-8 border-t border-white/5 text-[11px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-medium text-slate-300">JC Gestión de Certificaciones — Homologaciones Técnicas</p>
+      <p class="text-slate-500 font-mono">Rosario, Santa Fe, Argentina.</p>
+    </div>
+  </footer>
+
+  <!-- ================= BOTÓN FLOTANTE WHATSAPP DISCRETO ================= -->
+  <a href="https://wa.me/5493416914539?text=Hola,%20quisiera%20asesoramiento%20técnico%20sobre%20certificaciones." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-slate-900 hover:bg-slate-800 text-white p-3.5 rounded-full shadow-lg border border-white/20 transition-transform hover:scale-105 flex items-center justify-center z-50" aria-label="WhatsApp">
+    <i data-lucide="message-square" class="w-5 h-5 text-emerald-400"></i>
+  </a>
+
+  <!-- Script JS -->
+  <script src="2doPrototipo.js"></script>
+</body>
+</html>
