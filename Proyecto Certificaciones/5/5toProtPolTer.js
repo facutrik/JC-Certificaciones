@@ -1,0 +1,253 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicialización de iconos Lucide
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
+  /* -------------------------------------------------------------
+     1. Menú Móvil
+  ------------------------------------------------------------- */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+
+  /* -------------------------------------------------------------
+     2. Carrusel de Fondo en Hero Section (Logística e Importaciones)
+  ------------------------------------------------------------- */
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroIndicators = document.querySelectorAll('#hero-indicators span');
+  let currentHeroIndex = 0;
+  const slideIntervalTime = 5500;
+
+  function showSlide(index) {
+    heroSlides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.remove('opacity-0', 'scale-100');
+        slide.classList.add('opacity-100', 'scale-105');
+      } else {
+        slide.classList.remove('opacity-100', 'scale-105');
+        slide.classList.add('opacity-0', 'scale-100');
+      }
+    });
+
+    heroIndicators.forEach((bar, i) => {
+      if (i === index) {
+        bar.className = 'w-8 h-1 rounded-full bg-brand-accent transition-all duration-300';
+      } else {
+        bar.className = 'w-2 h-1 rounded-full bg-white/40 transition-all duration-300';
+      }
+    });
+  }
+
+  if (heroSlides.length > 0) {
+    setInterval(() => {
+      currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+      showSlide(currentHeroIndex);
+    }, slideIntervalTime);
+  }
+
+  /* -------------------------------------------------------------
+     3. Lógica del Verificador Rápido Interactivo
+  ------------------------------------------------------------- */
+  const rubroSelect = document.getElementById('quick-rubro');
+  const alimentacionSelect = document.getElementById('quick-alimentacion');
+  const estadoSelect = document.getElementById('quick-estado');
+  const resultTitle = document.getElementById('quick-result-title');
+  const resultDesc = document.getElementById('quick-result-desc');
+  const quickWaBtn = document.getElementById('quick-whatsapp-btn');
+
+  const matrizDiagnostico = {
+    clima: {
+      titulo: 'Seguridad Eléctrica + Eficiencia Energética Obligatoria (Res. 169/2018 + IRAM 2404)',
+      desc: 'Los equipos de refrigeración o climatización deben certificar seguridad eléctrica y obtener el etiquetado comparativo de consumo antes de ser nacionalizados.',
+    },
+    blanca: {
+      titulo: 'Seguridad Eléctrica y/o Eficiencia Energética (Según artefacto)',
+      desc: 'Aparatos electrodomésticos de cocina o lavado requieren ensayos de aislación y rigidez dieléctrica. Si operan a gas, se suma homologación NAG.',
+    },
+    gas: {
+      titulo: 'Homologación Técnica ENARGAS (Normas NAG) + Seguridad Eléctrica',
+      desc: 'Artefactos que consumen gas requieren matrícula de aprobación de modelo emitida por organismo certificador de gas y ensayo de quemadores/termocuplas.',
+    },
+    motores: {
+      titulo: 'Eficiencia Energética en Motores + Seguridad de Máquinas / Repuestos',
+      desc: 'Los motores de inducción monofásicos y trifásicos deben certificar su clase de rendimiento nominal y niveles de calentamiento.',
+    },
+    iluminacion: {
+      titulo: 'Seguridad Eléctrica en Drivers + Eficiencia en Lámparas LED',
+      desc: 'Las fuentes conmutadas y luminarias deben someterse a ensayos térmicos, compatibilidad electromagnética y marcado reglamentario.',
+    }
+  };
+
+  function actualizarDiagnostico() {
+    if (!rubroSelect) return;
+    const rubro = rubroSelect.value;
+    const alimentacion = alimentacionSelect ? alimentacionSelect.value : '';
+    const data = matrizDiagnostico[rubro];
+
+    if (data) {
+      if (alimentacion === 'gas' || alimentacion === 'mixto') {
+        resultTitle.textContent = 'Homologación Técnica ENARGAS (Normas NAG) + Res. 169/2018';
+        resultDesc.textContent = 'Al utilizar gas o ser mixto (eléctrico-gas), el producto exige verificación estricta de estanqueidad, corte por llama y seguridad eléctrica obligatoria.';
+      } else {
+        resultTitle.textContent = data.titulo;
+        resultDesc.textContent = data.desc;
+      }
+    }
+  }
+
+  if (rubroSelect && alimentacionSelect && estadoSelect) {
+    rubroSelect.addEventListener('change', actualizarDiagnostico);
+    alimentacionSelect.addEventListener('change', actualizarDiagnostico);
+    estadoSelect.addEventListener('change', actualizarDiagnostico);
+
+    if (quickWaBtn) {
+      quickWaBtn.addEventListener('click', () => {
+        const rubroTexto = rubroSelect.options[rubroSelect.selectedIndex].text;
+        const alimTexto = alimentacionSelect.options[alimentacionSelect.selectedIndex].text;
+        const estadoTexto = estadoSelect.options[estadoSelect.selectedIndex].text;
+
+        const msj = `*Consulta Rápida - JC Gestión de Certificaciones*\n\n` +
+          `• *Producto:* ${rubroTexto}\n` +
+          `• *Alimentación:* ${alimTexto}\n` +
+          `• *Estado de la Carga:* ${estadoTexto}\n\n` +
+          `Hola Juan, utilicé el verificador web y quisiera chequear la viabilidad de mi mercadería y los costos de ensayo.`;
+
+        window.open(`https://wa.me/5493416914539?text=${encodeURIComponent(msj)}`, '_blank');
+      });
+    }
+  }
+
+  /* -------------------------------------------------------------
+     4. Pestañas de Rubros y Productos
+  ------------------------------------------------------------- */
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+
+      tabButtons.forEach((b) => {
+        b.classList.remove('active', 'bg-brand-navy', 'text-white', 'border-brand-navy');
+        b.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+      });
+
+      btn.classList.add('active', 'bg-brand-navy', 'text-white', 'border-brand-navy');
+      btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-300');
+
+      tabContents.forEach((content) => {
+        if (content.id === targetId) {
+          content.classList.remove('hidden');
+          content.classList.add('block');
+        } else {
+          content.classList.remove('block');
+          content.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  /* -------------------------------------------------------------
+     5. Acordeones de FAQs
+  ------------------------------------------------------------- */
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+
+  faqToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const content = toggle.nextElementSibling;
+      const icon = toggle.querySelector('i');
+      const isExpanded = !content.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-content').forEach((item) => {
+        item.classList.add('hidden');
+      });
+      document.querySelectorAll('.faq-toggle i').forEach((item) => {
+        item.style.transform = 'rotate(0deg)';
+      });
+
+      if (!isExpanded) {
+        content.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+        toggle.setAttribute('aria-expanded', 'true');
+      } else {
+        content.classList.add('hidden');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* -------------------------------------------------------------
+     6. Conexión del Formulario con WhatsApp
+  ------------------------------------------------------------- */
+  const contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById('form-nombre').value.trim();
+      const empresa = document.getElementById('form-empresa').value.trim();
+      const rubro = document.getElementById('form-rubro').value;
+      const estado = document.getElementById('form-estado').value;
+      const mensaje = document.getElementById('form-mensaje').value.trim();
+
+      const textoWhatsApp = 
+        `*Consulta Web - JC Gestión de Certificaciones*\n\n` +
+        `• *Nombre:* ${nombre}\n` +
+        `• *Empresa:* ${empresa ? empresa : 'No especificada'}\n` +
+        `• *Tipo de producto:* ${rubro}\n` +
+        `• *Estado del caso:* ${estado}\n\n` +
+        `• *Mensaje/Detalles:* ${mensaje}`;
+
+      const url = `https://wa.me/5493416914539?text=${encodeURIComponent(textoWhatsApp)}`;
+      window.open(url, '_blank');
+    });
+  }
+
+  /* -------------------------------------------------------------
+     7. Control de Modales Legales (Privacidad y Términos)
+  ------------------------------------------------------------- */
+  const openPrivacyBtn = document.getElementById('open-privacy-btn');
+  const openTermsBtn = document.getElementById('open-terms-btn');
+  const modalPrivacy = document.getElementById('modal-privacy');
+  const modalTerms = document.getElementById('modal-terms');
+  const closeButtons = document.querySelectorAll('.close-modal');
+
+  if (openPrivacyBtn && modalPrivacy) {
+    openPrivacyBtn.addEventListener('click', () => modalPrivacy.classList.remove('hidden'));
+  }
+  if (openTermsBtn && modalTerms) {
+    openTermsBtn.addEventListener('click', () => modalTerms.classList.remove('hidden'));
+  }
+
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal');
+      const targetModal = document.getElementById(modalId);
+      if (targetModal) targetModal.classList.add('hidden');
+    });
+  });
+
+  // Cerrar al hacer clic en el backdrop fuera del cuadro blanco
+  [modalPrivacy, modalTerms].forEach(modal => {
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+    }
+  });
+});
