@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estructura Propuesta - JC Gestión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-700 font-sans p-4 md:p-8">
+
+  <div class="max-w-4xl mx-auto bg-white border border-slate-300 rounded shadow-sm p-6 space-y-8">
+    
+    <!-- Encabezado de la Maqueta -->
+    <div class="border-b border-slate-200 pb-4 flex justify-between items-center">
+      <div>
+        <span class="text-xs font-mono uppercase bg-slate-200 px-2 py-1 rounded text-slate-700">Wireframe / Boceto Estructural</span>
+        <h1 class="text-xl font-bold text-slate-900 mt-2">Propuesta de Arquitectura Web: JC Gestión</h1>
+      </div>
+      <span class="text-xs text-slate-400">Reunión Preliminar</span>
+    </div>
+
+    <!-- 1. Cabecera -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 1: NAVBAR & CABECERA ]</p>
+      <div class="flex justify-between items-center bg-white p-3 border border-slate-200 rounded">
+        <div class="font-bold text-slate-800 text-sm">LOGO JC GESTIÓN</div>
+        <div class="hidden sm:flex gap-4 text-xs text-slate-500">
+          <span>Servicios</span>
+          <span>Productos</span>
+          <span>Proceso</span>
+          <span>Contacto</span>
+        </div>
+        <div class="bg-orange-500 text-white text-xs px-3 py-1.5 rounded font-semibold">Botón WhatsApp</div>
+      </div>
+    </div>
+
+    <!-- 2. Hero Section -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 2: HERO PRINCIPAL - IMPACTO Y VALOR ]</p>
+      <div class="bg-slate-800 text-white p-6 rounded text-center space-y-3">
+        <span class="text-[11px] bg-slate-700 px-2 py-0.5 rounded text-emerald-400 font-mono">Fondo: Carrusel con buques, puertos y contenedores</span>
+        <h2 class="text-lg font-extrabold max-w-lg mx-auto">TITULAR ORIENTADO A EVITAR RETENCIONES ADUANERAS Y COSTOS FISCALES</h2>
+        <p class="text-xs text-slate-300 max-w-md mx-auto">Bajada explicativa corta: Homologación frente a IRAM, Seguridad Eléctrica y ENARGAS antes de despachar.</p>
+        <div class="flex justify-center gap-3 pt-2">
+          <div class="bg-orange-500 text-white text-xs px-4 py-2 rounded font-bold">Verificar Producto</div>
+          <div class="bg-slate-700 text-slate-200 text-xs px-4 py-2 rounded">Consulta Rápida</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Verificador Rápido -->
+    <div class="border-2 border-dashed border-orange-300 rounded p-4 bg-orange-50/40">
+      <p class="text-xs font-mono font-bold text-orange-600 uppercase mb-2">[ SECCIÓN 3: HERRAMIENTA INTERACTIVA - VERIFICADOR EN 3 CLICS ]</p>
+      <div class="bg-white p-4 border border-slate-200 rounded space-y-3">
+        <p class="text-xs text-slate-600"><strong>Objetivo:</strong> Que el importador filtre su producto sin leer teoría densa y conecte con WhatsApp listo para cotizar.</p>
+        <div class="grid grid-cols-3 gap-2 text-xs">
+          <div class="border p-2 rounded bg-slate-50 text-slate-500 text-center">1. Selección de Producto</div>
+          <div class="border p-2 rounded bg-slate-50 text-slate-500 text-center">2. Tensión (220V/Gas)</div>
+          <div class="border p-2 rounded bg-slate-50 text-slate-500 text-center">3. Estado de la Carga</div>
+        </div>
+        <div class="bg-slate-100 p-2.5 rounded text-center text-xs font-mono text-slate-600">
+          → Diagnóstico normativo inmediato + Botón pre-cargado a WhatsApp
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Cuadro Comparativo -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 4: COMPARATIVA DE IMPACTO COMERCIAL ]</p>
+      <div class="grid grid-cols-2 gap-4 text-xs">
+        <div class="bg-rose-50 border border-rose-200 p-3 rounded">
+          <p class="font-bold text-rose-700 mb-1">Sin Gestión Técnica Previa</p>
+          <p class="text-slate-500">Muestras retenidas, enchufes rechazados, pago de almacenaje fiscal en dólares.</p>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded">
+          <p class="font-bold text-emerald-700 mb-1">Con JC Gestión</p>
+          <p class="text-slate-600">Revisión de planos en origen, ingreso de muestras sin valor comercial y despacho ágil.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Servicios -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 5: SERVICIOS TÉCNICOS DESTACADOS ]</p>
+      <div class="grid grid-cols-3 gap-3 text-center text-xs">
+        <div class="bg-white p-3 border rounded shadow-sm">
+          <p class="font-bold text-slate-800">Seguridad Eléctrica</p>
+          <p class="text-[11px] text-slate-400 mt-1">Res. 169/2018 e IRAM</p>
+        </div>
+        <div class="bg-white p-3 border rounded shadow-sm">
+          <p class="font-bold text-slate-800">Eficiencia Energética</p>
+          <p class="text-[11px] text-slate-400 mt-1">Etiquetado comparativo</p>
+        </div>
+        <div class="bg-white p-3 border border-orange-300 rounded shadow-sm bg-orange-50/20">
+          <p class="font-bold text-orange-600">Gasodomésticos (ENARGAS)</p>
+          <p class="text-[11px] text-slate-500 mt-1">Especialidad diferencial</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Productos y Proceso -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 6: ALCANCE POR RUBRO & FLUJO EN 4 PASOS ]</p>
+      <div class="space-y-3">
+        <div class="bg-white p-2.5 border rounded flex justify-around text-xs text-slate-600">
+          <span>[Tab 1: Climatización]</span>
+          <span>[Tab 2: Línea Blanca]</span>
+          <span>[Tab 3: Motores]</span>
+          <span>[Tab 4: Iluminación]</span>
+        </div>
+        <div class="grid grid-cols-4 gap-2 text-center text-[11px] text-slate-500">
+          <div class="p-2 border rounded bg-white">01. Evaluación Previa</div>
+          <div class="p-2 border rounded bg-white">02. Ingreso de Muestra</div>
+          <div class="p-2 border rounded bg-white">03. Ensayos Oficiales</div>
+          <div class="p-2 border rounded bg-white">04. Certificado y Aduana</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Contacto y Footer -->
+    <div class="border-2 border-dashed border-slate-300 rounded p-4 bg-slate-50">
+      <p class="text-xs font-mono font-bold text-slate-500 uppercase mb-2">[ SECCIÓN 7: CONVERSIÓN, FORMULARIO Y FOOTER LEGAL ]</p>
+      <div class="bg-slate-900 text-slate-300 p-4 rounded text-xs space-y-2">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+          <span>Formulario de contacto técnico estructurado</span>
+          <span class="text-emerald-400 font-bold">WhatsApp Directo</span>
+        </div>
+        <div class="flex justify-between items-center text-[11px] text-slate-500 pt-1">
+          <span>Datos Rosario / Cobertura Nacional</span>
+          <span>Políticas de Privacidad & Términos de Servicio</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

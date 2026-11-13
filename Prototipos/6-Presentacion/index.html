@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boceto de Estructura Web - JC Gestión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0b192c',
+              dark: '#1e3e62',
+              primary: '#0056b3',
+              accent: '#ff6500'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased">
+
+  <!-- BANNER SUPERIOR DE PROPUESTA -->
+  <div class="bg-slate-900 text-slate-300 border-b border-slate-700 px-4 py-2.5 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="bg-brand-accent text-white font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">Boceto Inicial de Presentación</span>
+        <span class="text-slate-300">Esquema visual y distribución de bloques para JC Gestión.</span>
+      </div>
+      <span class="text-slate-400 font-mono text-[11px]">Etapa 1: Validación de arquitectura y contenidos</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 bg-brand-navy rounded flex items-center justify-center text-white font-bold text-sm border-b-2 border-brand-accent">
+          JC
+        </div>
+        <div>
+          <span class="block text-sm font-extrabold tracking-tight text-brand-navy leading-none">JC GESTIÓN</span>
+          <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Certificaciones Técnicas</span>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-xs font-semibold text-slate-500">
+        <span>01. Diagnóstico Rápido</span>
+        <span>02. Servicios Clave</span>
+        <span>03. Rubros</span>
+        <span>04. Proceso</span>
+        <span>05. Contacto</span>
+      </nav>
+      <div class="bg-brand-accent text-white text-xs px-3.5 py-1.5 rounded font-bold shadow-sm">
+        WhatsApp Directo
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 1: HERO (ENCABEZADO COMERCIAL) -->
+  <section class="relative bg-brand-navy text-white py-16 px-4 border-b border-slate-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-center relative z-10">
+      
+      <div class="lg:col-span-7 space-y-4">
+        <div class="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700 text-slate-300 px-3 py-1 rounded text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Aprobación Aduanera y Comercial</span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+          Certificá tu mercadería y evitá retenciones en Aduana <span class="text-brand-accent">antes del embarque</span>.
+        </h1>
+
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+          Coordinación técnica ante IRAM, Seguridad Eléctrica y ENARGAS para importar y comercializar en Argentina sin demoras fiscales ni trabas normativas.
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-1">
+          <div class="bg-brand-accent text-white text-xs font-bold px-4 py-2.5 rounded shadow">
+            Verificar Requisitos del Producto
+          </div>
+          <div class="bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium px-4 py-2.5 rounded">
+            Consulta por WhatsApp
+          </div>
+        </div>
+
+        <!-- Placeholder visual del carrusel para que el cliente lo visualice -->
+        <div class="mt-4 p-2.5 bg-slate-800/60 border border-slate-700/80 rounded flex items-center gap-3 text-slate-400 text-xs">
+          <i data-lucide="image" class="w-4 h-4 text-brand-accent shrink-0"></i>
+          <span><strong>Fondo de esta sección:</strong> Carrusel dinámico de fotografías logísticas (buques portacontenedores, terminales marítimas y laboratorios).</span>
+        </div>
+      </div>
+
+      <!-- Tarjeta de destaque: Gasodomésticos -->
+      <div class="lg:col-span-5 bg-slate-800/90 border border-slate-700 rounded-lg p-5 sm:p-6 shadow-xl space-y-3">
+        <div class="text-[11px] font-bold text-brand-accent uppercase tracking-wider">Especialización de Alto Valor</div>
+        <h3 class="text-base font-bold text-white">Equipos a Gas y Mixtos (ENARGAS)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Especialistas en la homologación de artefactos térmicos y gasodomésticos bajo normas NAG (cocinas, anafes, hornos y termotanques).
+        </p>
+        <div class="p-3 bg-slate-900/80 border border-slate-700 rounded text-[11px] text-slate-400">
+          <em>[Área reservada para casos de éxito / fotos de artefactos homologados]</em>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: HERRAMIENTA DE CONSULTA RÁPIDA (CONVERSIÓN EN 3 CLICS) -->
+  <section class="py-12 px-4 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-brand-navy rounded-xl p-6 sm:p-8 text-white shadow-md border border-slate-800 space-y-6">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Herramienta Interactiva</span>
+            <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">Verificador Rápido de Viabilidad Normativa</h2>
+          </div>
+          <span class="text-[11px] text-slate-400 bg-slate-800 px-2.5 py-1 rounded">Consulta en 3 pasos</span>
+        </div>
+
+        <p class="text-xs text-slate-300 max-w-2xl">
+          El importador o fabricante selecciona su rubro y alimentación para obtener el marco regulatorio preliminar y enviar la consulta estructurada a tu WhatsApp:
+        </p>
+
+        <!-- 3 Selectores tipo Wireframe pulido -->
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400">1. Tipo de Producto</span>
+            <div class="text-xs font-semibold text-white">[ Selector: Climatización / Línea Blanca / Gas / Motores ]</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400">2. Alimentación / Energía</span>
+            <div class="text-xs font-semibold text-white">[ Selector: 220V / 380V / Gas Natural o Envasado / Mixto ]</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400">3. Estado de la Operación</span>
+            <div class="text-xs font-semibold text-white">[ Selector: En origen / Muestra lista / En Aduana ]</div>
+          </div>
+        </div>
+
+        <!-- Área de resultado previo -->
+        <div class="p-3.5 bg-slate-900 border border-slate-700/80 rounded flex items-center justify-between text-xs text-slate-300">
+          <div class="flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+            <span><em>Dictamen normativo automático según las 3 opciones elegidas.</em></span>
+          </div>
+          <span class="bg-emerald-500/20 text-emerald-400 text-[11px] px-2.5 py-1 rounded font-semibold border border-emerald-500/30">
+            Conectar a WhatsApp con datos precargados
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: IMPACTO COMERCIAL (TABLA PREVENTIVA) -->
+  <section class="py-12 px-4 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto space-y-6">
+      
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Criterio Preventivo</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-brand-navy mt-1">¿Por qué certificar antes de embarcar?</h2>
+        <p class="text-xs text-slate-500 mt-1">Comparativa directa para que el cliente entienda el ahorro en costos aduaneros.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        
+        <div class="bg-white border border-rose-200 rounded-lg p-5 space-y-3">
+          <div class="flex items-center gap-2 text-rose-600 font-bold text-xs uppercase tracking-wider">
+            <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+            <span>Sin Asesoría Técnica Previa</span>
+          </div>
+          <ul class="text-xs text-slate-600 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Retención en puerto por fichas de enchufe no homologadas (IRAM 2073).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Costos imprevistos de almacenaje fiscal en dólares mientras se busca solución.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">•</span>
+              <span>Muestras demoradas en aduana por falta de régimen sin valor comercial.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-emerald-200 rounded-lg p-5 space-y-3 shadow-sm">
+          <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Con JC Gestión de Certificaciones</span>
+          </div>
+          <ul class="text-xs text-slate-700 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Revisión de planos, fichas y manuales en fábrica de origen antes de despachar.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Tramitación previa del régimen de muestra para laboratorio oficial.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Cero días de retención innecesaria y liberación directa a plaza.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: SERVICIOS Y RUBROS -->
+  <section class="py-12 px-4 bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto space-y-8">
+      
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
+        <div>
+          <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Especialidades</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-brand-navy mt-1">Servicios Técnicos y Rubros</h2>
+        </div>
+        <p class="text-xs text-slate-400"><em>[Aquí se integrarán las fichas y detalles que nos entregues en la siguiente etapa]</em></p>
+      </div>
+
+      <!-- 3 Tarjetas de servicio sintetizadas -->
+      <div class="grid sm:grid-cols-3 gap-4 text-xs">
+        <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg space-y-2">
+          <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+            <i data-lucide="zap" class="w-4 h-4 text-blue-600"></i>
+            <span>Seguridad Eléctrica</span>
+          </div>
+          <p class="text-slate-600">Res. 169/2018 e IRAM. Certificación por Marca, Lote o Tipo para artefactos eléctricos y fuentes.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg space-y-2">
+          <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+            <i data-lucide="gauge" class="w-4 h-4 text-emerald-600"></i>
+            <span>Eficiencia Energética</span>
+          </div>
+          <p class="text-slate-600">Etiquetado comparativo de rendimiento para acondicionadores de aire, heladeras y motores.</p>
+        </div>
+
+        <div class="bg-slate-50 border border-orange-200 p-4 rounded-lg space-y-2 bg-orange-50/20">
+          <div class="font-bold text-brand-accent text-sm flex items-center gap-2">
+            <i data-lucide="flame" class="w-4 h-4 text-brand-accent"></i>
+            <span>Gasodomésticos (ENARGAS)</span>
+          </div>
+          <p class="text-slate-600">Normas NAG para cocinas, anafes y termotanques. Especialización diferencial del estudio.</p>
+        </div>
+      </div>
+
+      <!-- Placeholder interactivo de rubros (Tabs) -->
+      <div class="p-4 bg-slate-50 border border-dashed border-slate-300 rounded-lg space-y-3">
+        <div class="flex items-center justify-between text-xs font-semibold text-slate-500 border-b border-slate-200 pb-2">
+          <span>Pestañas Interactivas por Producto:</span>
+          <div class="flex gap-2">
+            <span class="bg-brand-navy text-white px-2 py-0.5 rounded text-[11px]">Climatización</span>
+            <span class="bg-white border px-2 py-0.5 rounded text-[11px]">Línea Blanca</span>
+            <span class="bg-white border px-2 py-0.5 rounded text-[11px]">Motores</span>
+            <span class="bg-white border px-2 py-0.5 rounded text-[11px]">Iluminación</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">
+          [Al hacer clic en cada solapa, se desplegarán los productos exactos que vos apruebes, junto con las normas y requisitos de aduana correspondientes].
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: PROCESO DE TRABAJO -->
+  <section class="py-12 px-4 bg-brand-navy text-white border-b border-slate-800">
+    <div class="max-w-6xl mx-auto space-y-6">
+      
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Flujo de Trabajo</span>
+        <h2 class="text-xl sm:text-2xl font-bold mt-1">Circuito de Homologación en 4 Pasos</h2>
+        <p class="text-xs text-slate-400 mt-1">Transmite orden y claridad al importador antes de contratar.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-4 gap-4 text-xs">
+        <div class="bg-slate-800/70 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">01</span>
+          <h4 class="font-bold text-white">Evaluación Previa</h4>
+          <p class="text-slate-300">Revisión de planos técnicos en fábrica antes del embarque.</p>
+        </div>
+
+        <div class="bg-slate-800/70 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">02</span>
+          <h4 class="font-bold text-white">Ingreso de Muestras</h4>
+          <p class="text-slate-300">Tramitación de la constancia técnica para aduana.</p>
+        </div>
+
+        <div class="bg-slate-800/70 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">03</span>
+          <h4 class="font-bold text-white">Ensayos Oficiales</h4>
+          <p class="text-slate-300">Pruebas en laboratorios acreditados y seguimiento técnico.</p>
+        </div>
+
+        <div class="bg-slate-800/70 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">04</span>
+          <h4 class="font-bold text-white">Certificado & Aduana</h4>
+          <p class="text-slate-300">Emisión final y vinculación para despacho a plaza.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: FORMULARIO Y CONTACTO DIRECTO -->
+  <section class="py-12 px-4 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-12 gap-8 items-center">
+      
+      <div class="md:col-span-5 space-y-4 text-xs">
+        <span class="text-brand-accent font-bold uppercase tracking-wider">Vía Directa</span>
+        <h2 class="text-xl font-bold text-brand-navy">Contacto y Cotización</h2>
+        <p class="text-slate-600 leading-relaxed">
+          Tanto el formulario web como el botón directo conectan al cliente de inmediato con tu teléfono de WhatsApp y correo oficial.
+        </p>
+
+        <div class="space-y-2.5 pt-2 text-slate-700">
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-brand-accent"></i>
+            <span>+54 9 341 691-4539 (WhatsApp)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
+            <span>capolongojuan@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent"></i>
+            <span>Rosario, Santa Fe — Cobertura Nacional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Esquema del Formulario simplificado -->
+      <div class="md:col-span-7 bg-slate-50 border border-slate-200 rounded-lg p-5 space-y-3">
+        <div class="text-xs font-bold text-brand-navy">Formulario Técnico Rápido</div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="p-2 bg-white border rounded text-slate-400">[ Nombre y Apellido ]</div>
+          <div class="p-2 bg-white border rounded text-slate-400">[ Empresa / CUIT ]</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="p-2 bg-white border rounded text-slate-400">[ Tipo de Producto ]</div>
+          <div class="p-2 bg-white border rounded text-slate-400">[ Estado de Carga ]</div>
+        </div>
+        <div class="p-2 bg-white border rounded text-slate-400 text-xs h-16">[ Detalle técnico / Tensión de trabajo / Tipo de gas... ]</div>
+        <div class="bg-brand-navy text-white text-xs font-bold py-2.5 rounded text-center shadow">
+          Enviar Consulta a WhatsApp
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER INSTITUCIONAL -->
+  <footer class="bg-[#080c14] text-slate-400 py-8 px-4 text-xs border-t border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="font-bold text-slate-200 text-sm">JC Gestión de Certificaciones</p>
+        <p class="text-[11px] text-slate-500">Rosario, Santa Fe, Argentina — Homologaciones Técnicas y Aduana</p>
+      </div>
+      <div class="flex gap-4 text-[11px] text-slate-500">
+        <span>Políticas de Privacidad</span>
+        <span>•</span>
+        <span>Términos de Servicio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
