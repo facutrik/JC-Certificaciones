@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Certificación de Importaciones y Exportaciones | Homologaciones y Aduana</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#060919',
+              dark: '#0f172a',
+              blue: '#0056b3',
+              blueHover: '#004494',
+              accent: '#ff5e00',
+              light: '#f8fafc'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-blue selection:text-white">
+
+  <!-- ================= NAVBAR CON LOGO EXACTO Y MENÚ/BOTÓN A LA DERECHA ================= -->
+  <header class="sticky top-0 bg-brand-navy border-b border-slate-800 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Logo Oficial JC + Texto a la derecha -->
+      <a href="#hero" class="flex items-center gap-3.5 group shrink-0">
+        <svg class="h-10 sm:h-12 w-auto" viewBox="0 0 215 106" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo JC">
+          <!-- Letra J -->
+          <path d="M27 6H48V75C48 93 36 102 22 102C10 102 3 94 3 79V57H23V77C23 82 25 84 27 84C29 84 27 82 27 77V6Z" fill="#FFFFFF"/>
+          <!-- Letra C -->
+          <path d="M107 41H86V29C86 24 84 22 81 22C78 22 76 24 76 29V77C76 82 78 84 81 84C84 84 86 82 86 77V64H107V75C107 93 96 102 81 102C66 102 55 93 55 75V31C55 13 66 4 81 4C96 4 107 13 107 31V41Z" fill="#FFFFFF"/>
+          <!-- 7 Flechas de Eficiencia Energética -->
+          <path d="M115 6H138L147 11.5L138 17H115V6Z" fill="#FFFFFF"/>
+          <path d="M115 20H148L157 25.5L148 31H115V20Z" fill="#F5F3D7"/>
+          <path d="M115 34H158L167 39.5L158 45H115V34Z" fill="#EAE0A8"/>
+          <path d="M115 48H169L178 53.5L169 59H115V48Z" fill="#F9DF4B"/>
+          <path d="M115 62H180L189 67.5L180 73H115V62Z" fill="#FBB040"/>
+          <path d="M115 76H191L200 81.5L191 87H115V76Z" fill="#9E7324"/>
+          <path d="M115 90H203L212 95.5L203 101H115V90Z" fill="#FF5E00"/>
+        </svg>
+
+        <div class="border-l border-slate-700 pl-3.5 flex flex-col justify-center">
+          <span class="text-[10px] sm:text-xs font-extrabold tracking-wider text-white uppercase leading-tight">
+            Certificación de
+          </span>
+          <span class="text-[10px] sm:text-xs font-extrabold tracking-wider text-white uppercase leading-tight">
+            Importaciones y Exportaciones
+          </span>
+        </div>
+      </a>
+
+      <!-- Contenedor Derecho: Navegación + Botón WhatsApp agrupados a la derecha -->
+      <div class="flex items-center gap-6 lg:gap-8 ml-auto">
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-200">
+          <a href="#verificador" class="hover:text-white transition">Verificador 3 Clics</a>
+          <a href="#servicios" class="hover:text-white transition">Alcance y Servicios</a>
+          <a href="#productos" class="hover:text-white transition">Rubros y Equipos</a>
+          <a href="#proceso" class="hover:text-white transition">Circuito</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/5493416914539?text=Hola%20Juan,%20quisiera%20hacerte%20una%20consulta%20sobre%20certificaciones%20y%20gestión%20aduanera." target="_blank" class="bg-brand-blue hover:bg-brand-blueHover text-white text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-md font-bold shadow-md border border-blue-400/30 flex items-center gap-2 transition">
+            <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            <span class="hidden sm:inline">WhatsApp Directo</span>
+            <span class="sm:hidden">WhatsApp</span>
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-white p-1.5" aria-label="Abrir menú">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-navy border-t border-slate-800 px-4 py-3 space-y-2 text-sm font-semibold">
+      <a href="#verificador" class="mobile-nav-link block py-1.5 text-slate-200">Verificador 3 Clics</a>
+      <a href="#servicios" class="mobile-nav-link block py-1.5 text-slate-200">Alcance y Servicios</a>
+      <a href="#productos" class="mobile-nav-link block py-1.5 text-slate-200">Rubros y Equipos</a>
+      <a href="#proceso" class="mobile-nav-link block py-1.5 text-slate-200">Circuito de Trabajo</a>
+    </div>
+  </header>
+
+  <!-- ================= SECCIÓN 1: HERO CON CARRUSEL LOGÍSTICO DE MAYOR VISIBILIDAD ================= -->
+  <section id="hero" class="relative bg-brand-navy text-white pt-12 pb-10 px-4 sm:px-6 lg:px-8 border-b border-slate-800 overflow-hidden">
+    
+    <!-- Carrusel Logístico (5 fotos: Buques, Puertos, Grúas y Contenedores) -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100 scale-105 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+      <!-- Slide 2: Grúas y logística portuaria de carga -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+      <!-- Slide 3: Contenedores apilados en terminal marítima -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+      <!-- Slide 4: Buque de carga navegando en el océano -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+      <!-- Slide 5: Vista aérea de patio de contenedores y logística -->
+      <div class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0 scale-100 transition-transform ease-out duration-[7000ms]"
+           style="background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=2000&q=80');">
+      </div>
+
+    <!-- Gradiente intermedio más oscuro -->
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/92 to-brand-navy/82"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/40 to-brand-navy/70"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10 space-y-12">
+      
+      <!-- Bloque Principal: Texto a la izquierda + Formulario a la derecha -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Columna Izquierda -->
+        <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-brand-navy/85 border border-blue-700/70 text-blue-100 px-3 py-1 rounded text-xs backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+            <span>Aduana Buenos Aires y Rosario • Cobertura Nacional</span>
+          </div>
+
+          <h1 class="text-xl sm:text-3xl lg:text-[2.15rem] font-extrabold tracking-tight leading-snug drop-shadow-sm">
+            Certificación de <br><span class="text-brand-accent">Importaciones y Exportaciones</span>.
+          </h1>
+
+          <p class="text-xs sm:text-sm text-slate-100 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal drop-shadow-sm">
+            Gestion Integral de Certificaciones ante Entes Certificadores, Mantenimiento de Vigilancias de Mercado , Cesiones y Extensiones de Licencias, Asesoría y Gestión Aduanera. Traducción Técnica de Manuales.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+            <a href="#verificador" class="bg-brand-blue hover:bg-brand-blueHover text-white text-xs font-bold px-4 py-2.5 rounded shadow-md border border-blue-400/30 inline-flex items-center gap-1.5 transition">
+              <span>Verificador Rápido en 3 Clics</span>
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="#productos" class="bg-brand-navy/85 hover:bg-blue-900 border border-blue-500/50 text-white text-xs font-semibold px-4 py-2.5 rounded backdrop-blur-sm inline-flex items-center gap-1.5 transition">
+              <span>Explorar Productos Homologados</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-brand-accent"></i>
+            </a>
+          </div>
+
+          <div class="pt-5 grid grid-cols-1 sm:grid-cols-12 gap-4 border-t border-white/15 text-left">
+            <div class="sm:col-span-3 space-y-1">
+              <p class="text-xs font-bold text-white">Certificaciones</p>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                Seguridad Eléctrica,<br>Eficiencia Energética y Gas.
+              </p>
+            </div>
+            <div class="sm:col-span-5 space-y-1">
+              <p class="text-xs font-bold text-white">Vigilancias de Mercado</p>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                Seguridad Eléctrica, Eficiencia Energética y Gas. <br> Cesiones y Extensiones de Licencias.
+              </p>
+            </div>
+            <div class="sm:col-span-4 space-y-1">
+              <p class="text-xs font-bold text-white">Gestión Aduanera</p>
+              <p class="text-[11px] text-slate-300 leading-relaxed">
+                Asesoría y Gestión Aduana Rosario y Bs. Aires. Traducción Técnica de Manuales.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario -->
+        <div class="lg:col-span-5 bg-white/95 backdrop-blur-sm text-slate-800 rounded-lg p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-3">
+          <div class="border-b border-slate-200 pb-2">
+            <span class="text-[10px] font-bold text-brand-blue uppercase tracking-wider">Cotización Técnica Directa</span>
+            <h3 class="text-base font-bold text-brand-navy">Consultá tu Certificación o Trámite</h3>
+          </div>
+
+          <form id="contact-form" class="space-y-2.5 text-xs">
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label for="form-nombre" class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5">Nombre / Apellido</label>
+                <input type="text" id="form-nombre" required placeholder="Ej. Martín Gómez" class="w-full px-2.5 py-2 rounded border border-slate-300 text-xs bg-slate-50 focus:bg-white focus:border-brand-blue focus:outline-none">
+              </div>
+              <div>
+                <label for="form-empresa" class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5">Empresa / CUIT</label>
+                <input type="text" id="form-empresa" placeholder="Ej. Importadora Sur SRL" class="w-full px-2.5 py-2 rounded border border-slate-300 text-xs bg-slate-50 focus:bg-white focus:border-brand-blue focus:outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label for="form-servicio" class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5">Gestión Requerida</label>
+                <select id="form-servicio" class="w-full px-2 py-2 rounded border border-slate-300 text-[11px] bg-slate-50 focus:bg-white focus:border-brand-blue focus:outline-none text-slate-700 font-medium">
+                  <option value="Certificación (Eléctrica / Eficiencia / Gas)">Certificación Nueva</option>
+                  <option value="Mantenimiento de Vigilancia de Mercado">Vigilancia de Mercado</option>
+                  <option value="Cesión o Extensión de Licencia">Cesión / Extensión Licencia</option>
+                  <option value="Asesoría y Gestión Aduanera (Bs. As. / Rosario)">Gestión Aduanera (BA/ROS)</option>
+                  <option value="Traducción Técnica de Manuales">Traducción de Manuales</option>
+                </select>
+              </div>
+              <div>
+                <label for="form-rubro" class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5">Equipo / Rubro</label>
+                <select id="form-rubro" class="w-full px-2 py-2 rounded border border-slate-300 text-[11px] bg-slate-50 focus:bg-white focus:border-brand-blue focus:outline-none text-slate-700">
+                  <option value="Heladeras / Freezers / Exhibidoras">Heladeras / Freezers</option>
+                  <option value="Aires Acondicionados Grandes / Climatización">Aires Acondicionados</option>
+                  <option value="Lavarropas / Electrodomésticos">Lavarropas / Línea Blanca</option>
+                  <option value="Cocinas / Productos a Gas (ENARGAS)">Cocinas / Productos a Gas</option>
+                  <option value="Motores Forzadores de Exhibidoras">Motores Forzadores</option>
+                  <option value="Otro producto comercial/industrial">Otro producto</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="form-mensaje" class="block text-[10px] font-bold text-slate-600 uppercase mb-0.5">Detalle de la Operación</label>
+              <textarea id="form-mensaje" rows="2" required placeholder="Indicá puerto de ingreso (Buenos Aires o Rosario), modelo de equipo o laboratorio..." class="w-full px-2.5 py-1.5 rounded border border-slate-300 text-xs bg-slate-50 focus:bg-white focus:border-brand-blue focus:outline-none"></textarea>
+            </div>
+
+            <div class="flex items-start gap-2 pt-1">
+              <input type="checkbox" id="form-consent" required class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-brand-blue focus:ring-brand-blue cursor-pointer">
+              <label for="form-consent" class="text-[10px] text-slate-500 leading-snug cursor-pointer select-none">
+                Acepto el registro de mis datos conforme a las 
+                <button type="button" id="form-open-privacy" class="text-brand-blue underline hover:text-brand-navy font-medium">Políticas de Privacidad</button>.
+              </label>
+            </div>
+
+            <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blueHover text-white font-bold py-2.5 rounded shadow text-xs flex items-center justify-center gap-2 transition cursor-pointer">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span>Enviar Consulta a WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- ================= FRANJA INFERIOR DIVIDIDA: ENTES CERTIFICADORES | LABORATORIOS ACREDITADOS ================= -->
+      <div class="pt-7 border-t border-white/15 grid lg:grid-cols-2 gap-8 lg:gap-0 items-center">
+        
+        <!-- BLOQUE 1: ENTES CERTIFICADORES -->
+        <div class="flex flex-col items-center lg:pr-8 lg:border-r lg:border-white/15 space-y-3.5">
+          <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+            Entes Certificadores
+          </span>
+          
+          <div class="flex flex-wrap items-center justify-center gap-7 sm:gap-9 text-slate-200">
+            <!-- 1. IRAM -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center cursor-default" title="IRAM">
+              <svg class="h-11 w-11" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="26" stroke="currentColor" stroke-width="3.5"/>
+                <path d="M7 21H53M7 39H53" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="8" y="22.5" width="44" height="15" fill="currentColor" fill-opacity="0.18"/>
+                <text x="30" y="34.5" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-weight="900" font-size="13.5" letter-spacing="0.5">IRAM</text>
+              </svg>
+            </div>
+
+            <!-- 2. MGM Quality Certification S.A. -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center gap-2 cursor-default" title="MGM Quality Certification S.A.">
+              <svg class="h-9 w-10" viewBox="0 0 60 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 35L18 10L28 25L18 25L13 35H5Z" fill="currentColor" fill-opacity="0.65"/>
+                <path d="M22 25L32 38L48 8H38L30 24L26 19L22 25Z" fill="currentColor"/>
+                <path d="M44 22L55 35H46L40 28L44 22Z" fill="currentColor" fill-opacity="0.65"/>
+              </svg>
+              <div class="leading-none">
+                <span class="block text-base font-black tracking-tight text-current">MGM</span>
+                <span class="block text-[7px] font-bold tracking-wider uppercase text-slate-300">Quality Certification</span>
+              </div>
+            </div>
+
+            <!-- 3. IQC International Quality Certification -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center gap-2 cursor-default" title="IQC S.A. - International Quality Certification">
+              <div class="border-2 border-current/80 px-1.5 py-0.5 rounded-sm font-serif font-black text-base tracking-tighter leading-none">
+                IQC
+              </div>
+              <div class="text-[9px] font-semibold leading-tight text-current">
+                International<br>Quality Certification
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2: LABORATORIOS ACREDITADOS -->
+        <div class="flex flex-col items-center lg:pl-8 space-y-3.5">
+          <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+            Laboratorios Acreditados
+          </span>
+
+          <div class="flex flex-wrap items-center justify-center gap-7 sm:gap-9 text-slate-200">
+            <!-- 4. Laboratorio Consultar SRL -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center gap-2 cursor-default" title="Laboratorio Consultar SRL">
+              <div class="w-7 h-7 rounded border-2 border-current flex items-center justify-center font-black text-base">
+                ?
+              </div>
+              <div class="leading-none">
+                <span class="block text-[8.5px] font-semibold text-slate-300">Laboratorio</span>
+                <span class="block text-sm font-extrabold italic tracking-tight">Consultar</span>
+              </div>
+            </div>
+
+            <!-- 5. IADEV -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center cursor-default" title="IADEV">
+              <svg class="h-11 w-24" viewBox="0 0 130 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="65" cy="26" r="22" stroke="currentColor" stroke-width="2" stroke-opacity="0.65"/>
+                <rect x="14" y="13" width="96" height="25" stroke="currentColor" stroke-width="2"/>
+                <text x="60" y="32" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.5">iadev</text>
+                <path d="M98 20L104 31L119 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- 6. SHITSUKE Centro Tecnológico -->
+            <div class="opacity-85 hover:opacity-100 hover:scale-110 hover:text-white transition-all duration-300 ease-out flex items-center gap-2 cursor-default" title="Shitsuke Centro Tecnológico">
+              <svg class="h-8 w-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="4" width="22" height="22" rx="3" transform="rotate(45 20 4)" stroke="currentColor" stroke-width="4.5"/>
+              </svg>
+              <div class="leading-none">
+                <span class="block text-xs font-black tracking-wide uppercase">SHITSUKE</span>
+                <span class="block text-[7.5px] font-medium tracking-wider uppercase text-slate-300 mt-0.5">Centro Tecnológico</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: VERIFICADOR EN 3 CLICS ================= -->
+  <section id="verificador" class="py-12 px-4 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-brand-navy rounded-xl p-6 sm:p-8 text-white shadow-md border border-slate-800 space-y-6">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Herramienta de Consulta</span>
+            <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">Verificador Rápido de Certificación y Gestión</h2>
+          </div>
+          <span class="text-[11px] text-blue-200 bg-blue-950 border border-blue-800 px-2.5 py-1 rounded">Diagnóstico en 3 pasos</span>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="bg-slate-900/90 border border-slate-700 p-3 rounded space-y-1">
+            <label for="quick-rubro" class="text-[10px] font-mono uppercase text-slate-400 block">1. Equipo / Producto</label>
+            <select id="quick-rubro" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-2 text-xs text-white focus:outline-none focus:border-brand-blue">
+              <option value="frio">Heladeras, Freezers y Exhibidoras</option>
+              <option value="aire">Equipos de Aire Acondicionado Grandes</option>
+              <option value="lavarropas">Lavarropas y Línea Blanca</option>
+              <option value="gas">Cocinas y Artefactos a Gas</option>
+              <option value="motores">Motores Forzadores de Exhibidoras</option>
+            </select>
+          </div>
+
+          <div class="bg-slate-900/90 border border-slate-700 p-3 rounded space-y-1">
+            <label for="quick-alimentacion" class="text-[10px] font-mono uppercase text-slate-400 block">2. Aduana / Alimentación</label>
+            <select id="quick-alimentacion" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-2 text-xs text-white focus:outline-none focus:border-brand-blue">
+              <option value="ba_220">Ingreso Aduana Buenos Aires (220V/380V)</option>
+              <option value="ros_220">Ingreso Aduana Rosario (220V/380V)</option>
+              <option value="gas">Producto a Gas / Mixto (ENARGAS)</option>
+              <option value="vigilancia">Ya posee licencia (Vigilancia / Extensión)</option>
+            </select>
+          </div>
+
+          <div class="bg-slate-900/90 border border-slate-700 p-3 rounded space-y-1">
+            <label for="quick-estado" class="text-[10px] font-mono uppercase text-slate-400 block">3. Trámite Requerido</label>
+            <select id="quick-estado" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-2 text-xs text-white focus:outline-none focus:border-brand-blue">
+              <option value="nueva">Certificación + Ensayo en Laboratorio</option>
+              <option value="vigilancia">Vigilancia de Mercado (Envío y Seguimiento)</option>
+              <option value="cesion">Cesión o Extensión de Licencia</option>
+              <option value="aduana_manual">Gestión Aduanera + Traducción Manual</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="quick-result-box" class="p-4 bg-slate-900 border border-slate-700/80 rounded flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-300">
+          <div class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+            <div>
+              <p id="quick-result-title" class="font-bold text-white text-sm">Seguridad Eléctrica + Eficiencia Energética + Seguimiento en Laboratorio</p>
+              <p id="quick-result-desc" class="text-xs text-slate-400 mt-0.5">Coordinamos el envío y seguimiento de muestras en laboratorios acreditados, gestión aduanera en Buenos Aires o Rosario y traducción técnica de manuales.</p>
+            </div>
+          </div>
+          <button id="quick-whatsapp-btn" class="bg-brand-blue hover:bg-brand-blueHover text-white text-xs px-4 py-2.5 rounded font-bold border border-blue-400/30 shrink-0 transition flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Consultar Caso por WhatsApp</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3: ALCANCE COMPLETO DE SERVICIOS ================= -->
+  <section id="servicios" class="py-14 px-4 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto space-y-8">
+      
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
+        <div>
+          <span class="text-brand-blue text-xs font-bold uppercase tracking-wider">Alcance Técnico y Operativo</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-brand-navy mt-1">Servicios de Certificación, Vigilancias y Gestión Aduanera</h2>
+        </div>
+        <span class="text-xs text-slate-500">Operaciones en Buenos Aires, Rosario y todo el país</span>
+      </div>
+
+      <!-- Fila 1 -->
+      <div class="grid md:grid-cols-3 gap-4 text-xs">
+        <div class="bg-white border border-slate-200 p-5 rounded-lg space-y-2.5 shadow-sm">
+          <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+            <div class="w-7 h-7 rounded bg-blue-50 text-brand-blue flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <span>Seguridad Eléctrica, Eficiencia y Gas</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            Certificación integral de <strong>Seguridad Eléctrica</strong>, etiquetado de <strong>Eficiencia Energética</strong> y homologación de <strong>Productos a Gas</strong> ante organismos oficiales.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-blue-200 p-5 rounded-lg space-y-2.5 shadow-sm">
+          <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+            <div class="w-7 h-7 rounded bg-blue-100 text-brand-blue flex items-center justify-center shrink-0">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+            </div>
+            <span>Mantenimiento de Vigilancias de Mercado</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            Gestión continua de licencias vigentes de <strong>Seguridad Eléctrica y Eficiencia Energética</strong>, incluyendo el <strong>envío y seguimiento técnico de productos a ensayar en Laboratorios Acreditados</strong>.
+          </p>
+        </div>
+
+        <div class="bg-white border border-slate-200 p-5 rounded-lg space-y-2.5 shadow-sm">
+          <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+            <div class="w-7 h-7 rounded bg-blue-50 text-brand-blue flex items-center justify-center shrink-0">
+              <i data-lucide="file-plus-2" class="w-4 h-4"></i>
+            </div>
+            <span>Cesiones y Extensiones de Licencias</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            Tramitación de <strong>cesiones de certificados</strong> entre importadores/fabricantes y <strong>extensiones de licencias</strong> vigentes para incorporar nuevos modelos o familias de productos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="grid md:grid-cols-2 gap-4 text-xs">
+        <div class="bg-brand-navy text-white border border-slate-800 p-5 rounded-lg space-y-2.5 shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="font-bold text-white text-sm flex items-center gap-2">
+              <div class="w-7 h-7 rounded bg-brand-blue text-white flex items-center justify-center shrink-0">
+                <i data-lucide="container" class="w-4 h-4"></i>
+              </div>
+              <span>Asesoría y Gestión Aduanera</span>
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-blue-950 text-blue-200 px-2 py-0.5 rounded border border-blue-800">Buenos Aires & Rosario</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            Gestión operativa y articulación aduanera directa en <strong>Buenos Aires y Rosario</strong> para el ingreso ágil de muestras sin valor comercial, intervenciones previas y nacionalización de mercadería.
+          </p>
+        </div>
+
+        <div class="bg-white border border-slate-200 p-5 rounded-lg space-y-2.5 shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="font-bold text-brand-navy text-sm flex items-center gap-2">
+              <div class="w-7 h-7 rounded bg-blue-50 text-brand-blue flex items-center justify-center shrink-0">
+                <i data-lucide="languages" class="w-4 h-4"></i>
+              </div>
+              <span>Traducción de Manuales</span>
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200">Inglés → Español</span>
+          </div>
+          <p class="text-slate-600 leading-relaxed">
+            <strong>Traducción técnica de manuales</strong> de instalación, uso y seguridad al español conforme a la terminología exigida por los organismos certificadores y Defensa del Consumidor.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 4: PESTAÑAS INTERACTIVAS POR PRODUCTO CON FOTOS ================= -->
+  <section id="productos" class="relative overflow-hidden py-14 px-4 bg-white border-b border-slate-200">
+    <div class="absolute right-0 -bottom-10 select-none pointer-events-none z-0 opacity-[0.035] leading-none">
+      <span class="text-[22rem] font-black tracking-tighter text-brand-navy block font-sans">JC</span>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10 space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-200 pb-4 gap-3">
+        <div>
+          <span class="text-brand-blue text-xs font-bold uppercase tracking-wider">Equipamiento Homologado</span>
+          <h2 class="text-xl font-bold text-brand-navy mt-0.5">Categorías de Productos y Requisitos</h2>
+        </div>
+
+        <div class="flex flex-wrap gap-2" id="tabs-container">
+          <button class="tab-btn active px-3.5 py-1.5 rounded text-xs font-bold border border-brand-blue bg-brand-blue text-white shadow-sm transition cursor-pointer" data-target="tab-frio">Heladeras, Freezers & Exhibidoras</button>
+          <button class="tab-btn px-3.5 py-1.5 rounded text-xs font-bold border border-slate-700 bg-brand-navy text-slate-200 hover:bg-brand-blue hover:text-white transition cursor-pointer" data-target="tab-aire">Aires Acondicionados Grandes</button>
+          <button class="tab-btn px-3.5 py-1.5 rounded text-xs font-bold border border-slate-700 bg-brand-navy text-slate-200 hover:bg-brand-blue hover:text-white transition cursor-pointer" data-target="tab-blanca">Lavarropas & Cocinas (Gas)</button>
+          <button class="tab-btn px-3.5 py-1.5 rounded text-xs font-bold border border-slate-700 bg-brand-navy text-slate-200 hover:bg-brand-blue hover:text-white transition cursor-pointer" data-target="tab-motores">Motores Forzadores</button>
+        </div>
+      </div>
+
+      <!-- Tab 1 -->
+      <div id="tab-frio" class="tab-content block bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
+        <div class="grid md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-7 space-y-3 text-xs text-slate-700">
+            <span class="inline-block bg-blue-100 text-brand-blue font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">Refrigeración Doméstica y Comercial</span>
+            <h3 class="font-bold text-brand-navy text-base">Heladeras, Freezers y Exhibidoras Verticales</h3>
+            <p class="leading-relaxed">
+              Gestión integral de ensayos de <strong>Seguridad Eléctrica</strong> y <strong>Etiquetado de Eficiencia Energética</strong> obligatorio. Incluye mantenimiento de vigilancias anuales, envío y seguimiento de muestras en laboratorios acreditados, cesiones de licencia y traducción técnica de manuales.
+            </p>
+            <ul class="space-y-1.5 text-slate-600 pt-1">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Heladeras con y sin freezer, freezers pozo y exhibidoras comerciales.</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Tramitación aduanera en Buenos Aires y Rosario.</span></li>
+            </ul>
+          </div>
+          <div class="md:col-span-5">
+            <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Heladeras y equipos de refrigeración" class="w-full h-48 object-cover">
+              <div class="bg-brand-navy text-white text-[10px] px-3 py-1.5 flex justify-between items-center">
+                <span>Heladeras, Freezers y Exhibidoras</span>
+                <span class="text-brand-accent font-bold">IRAM / Eficiencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div id="tab-aire" class="tab-content hidden bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
+        <div class="grid md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-7 space-y-3 text-xs text-slate-700">
+            <span class="inline-block bg-blue-100 text-brand-blue font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">Climatización Comercial e Industrial</span>
+            <h3 class="font-bold text-brand-navy text-base">Equipos de Aire Acondicionado Grandes</h3>
+            <p class="leading-relaxed">
+              Homologación técnica para unidades split de alta capacidad, equipos piso-techo, cassette, centrales y climatizadores comerciales. Coordinación de ensayos en laboratorio acreditado y extensión de familias de modelos.
+            </p>
+            <ul class="space-y-1.5 text-slate-600 pt-1">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Certificación de Seguridad Eléctrica y Eficiencia Energética.</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Mantenimiento de vigilancias de mercado y manuales en español.</span></li>
+            </ul>
+          </div>
+          <div class="md:col-span-5">
+            <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white">
+              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Equipos de aire acondicionado grandes" class="w-full h-48 object-cover">
+              <div class="bg-brand-navy text-white text-[10px] px-3 py-1.5 flex justify-between items-center">
+                <span>Climatización y Aires Grandes</span>
+                <span class="text-brand-accent font-bold">Seguridad + Eficiencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div id="tab-blanca" class="tab-content hidden bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
+        <div class="grid md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-7 space-y-3 text-xs text-slate-700">
+            <span class="inline-block bg-orange-100 text-brand-accent font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">Línea Blanca y Gasodomésticos</span>
+            <h3 class="font-bold text-brand-navy text-base">Lavarropas, Cocinas y Artefactos a Gas</h3>
+            <p class="leading-relaxed">
+              Certificación de lavarropas automáticos/semiautomáticos (Seguridad Eléctrica y Eficiencia Energética) y homologación integral de cocinas, hornos y anafes a gas ante organismos reguladores.
+            </p>
+            <ul class="space-y-1.5 text-slate-600 pt-1">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Aprobación de productos a gas y equipos mixtos gas-eléctrico.</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Traducción técnica de manuales y advertencias reglamentarias.</span></li>
+            </ul>
+          </div>
+          <div class="md:col-span-5">
+            <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white">
+              <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80" alt="Cocinas y lavarropas línea blanca" class="w-full h-48 object-cover">
+              <div class="bg-brand-navy text-white text-[10px] px-3 py-1.5 flex justify-between items-center">
+                <span>Lavarropas y Cocinas a Gas</span>
+                <span class="text-brand-accent font-bold">Eléctrica / Gas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4 -->
+      <div id="tab-motores" class="tab-content hidden bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
+        <div class="grid md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-7 space-y-3 text-xs text-slate-700">
+            <span class="inline-block bg-blue-100 text-brand-blue font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">Componentes de Refrigeración</span>
+            <h3 class="font-bold text-brand-navy text-base">Motores Forzadores de Exhibidoras</h3>
+            <p class="leading-relaxed">
+              Ensayos y certificación de motores forzadores axiales y centrífugos utilizados en exhibidoras comerciales, cámaras frigoríficas y condensadores. Gestión de cesiones, extensiones de familia y seguimiento de ensayos en laboratorio.
+            </p>
+            <ul class="space-y-1.5 text-slate-600 pt-1">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Verificación eléctrica, aislamiento y rendimiento nominal.</span></li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> <span>Articulación aduanera en Buenos Aires y Rosario.</span></li>
+            </ul>
+          </div>
+          <div class="md:col-span-5">
+            <div class="relative rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white">
+              <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=800&q=80" alt="Motores forzadores de exhibidoras" class="w-full h-48 object-cover">
+              <div class="bg-brand-navy text-white text-[10px] px-3 py-1.5 flex justify-between items-center">
+                <span>Motores Forzadores de Exhibidoras</span>
+                <span class="text-brand-accent font-bold">Certificación Técnica</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 5: PROCESO EN 4 PASOS ================= -->
+  <section id="proceso" class="py-12 px-4 bg-brand-navy text-white border-b border-slate-800">
+    <div class="max-w-6xl mx-auto space-y-6">
+      
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-brand-accent text-xs font-bold uppercase tracking-wider">Metodología Operativa</span>
+        <h2 class="text-xl sm:text-2xl font-bold mt-1">Circuito de Trabajo en 4 Etapas</h2>
+        <p class="text-xs text-slate-400 mt-1">Desde la muestra en origen hasta el mantenimiento continuo de tus licencias.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-4 gap-4 text-xs">
+        <div class="bg-slate-900/90 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">01</span>
+          <h4 class="font-bold text-white">Análisis & Manuales</h4>
+          <p class="text-slate-300">Evaluación normativa previa, traducción técnica de manuales y gestión de muestras en Aduana (BA/ROS).</p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">02</span>
+          <h4 class="font-bold text-white">Laboratorio Acreditado</h4>
+          <p class="text-slate-300">Envío y seguimiento continuo de los ensayos en IRAM, Consultar, Shitsuke, IADEV, MGM o IQC.</p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">03</span>
+          <h4 class="font-bold text-white">Licencia & Despacho</h4>
+          <p class="text-slate-300">Obtención del certificado (Eléctrica, Eficiencia o Gas), cesiones o extensiones para liberar carga.</p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-700 p-4 rounded-lg space-y-1.5">
+          <span class="text-brand-accent font-black text-xl">04</span>
+          <h4 class="font-bold text-white">Vigilancia de Mercado</h4>
+          <p class="text-slate-300">Mantenimiento periódico de licencias con envío y seguimiento de muestras a laboratorio.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ================= FOOTER INSTITUCIONAL HORIZONTAL ================= -->
+  <footer class="relative bg-brand-navy text-slate-300 pt-10 pb-6 px-4 sm:px-6 lg:px-8 text-xs border-t border-slate-800 overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto space-y-8 relative z-10">
+      
+      <!-- FILA SUPERIOR: Logo a la izquierda + Botones de Contacto en línea a la derecha -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Bloque Logo JC + Bajada (5 columnas) -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="flex items-center gap-3.5">
+            <svg class="h-11 sm:h-12 w-auto shrink-0" viewBox="0 0 215 106" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo JC">
+              <path d="M27 6H48V75C48 93 36 102 22 102C10 102 3 94 3 79V57H23V77C23 82 25 84 27 84C29 84 27 82 27 77V6Z" fill="#FFFFFF"/>
+              <path d="M107 41H86V29C86 24 84 22 81 22C78 22 76 24 76 29V77C76 82 78 84 81 84C84 84 86 82 86 77V64H107V75C107 93 96 102 81 102C66 102 55 93 55 75V31C55 13 66 4 81 4C96 4 107 13 107 31V41Z" fill="#FFFFFF"/>
+              <path d="M115 6H138L147 11.5L138 17H115V6Z" fill="#FFFFFF"/>
+              <path d="M115 20H148L157 25.5L148 31H115V20Z" fill="#F5F3D7"/>
+              <path d="M115 34H158L167 39.5L158 45H115V34Z" fill="#EAE0A8"/>
+              <path d="M115 48H169L178 53.5L169 59H115V48Z" fill="#F9DF4B"/>
+              <path d="M115 62H180L189 67.5L180 73H115V62Z" fill="#FBB040"/>
+              <path d="M115 76H191L200 81.5L191 87H115V76Z" fill="#9E7324"/>
+              <path d="M115 90H203L212 95.5L203 101H115V90Z" fill="#FF5E00"/>
+            </svg>
+            <div class="border-l border-slate-700 pl-3.5 flex flex-col justify-center">
+              <span class="text-xs sm:text-sm font-extrabold tracking-wider text-white uppercase leading-snug">
+                Certificación de
+              </span>
+              <span class="text-xs sm:text-sm font-bold tracking-wider text-slate-300 uppercase leading-snug">
+                Importaciones y Exportaciones
+              </span>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-400 max-w-md leading-relaxed">
+            Homologaciones de Seguridad Eléctrica, Eficiencia Energética y Gas. Cobertura Nacional.
+          </p>
+        </div>
+
+        <!-- Bloque Contacto Directo Horizontal (7 columnas) -->
+        <div class="lg:col-span-7 space-y-2.5">
+          <p class="font-bold text-white uppercase tracking-wider text-[11px]">Contacto Directo</p>
+          
+          <div class="grid sm:grid-cols-3 gap-2.5">
+            <!-- Botón Teléfono / WhatsApp -->
+            <a href="https://wa.me/5493416914539?text=Hola%20Juan,%20te%20contacto%20desde%20la%20web%20de%20JC%20Certificaciones." target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2.5 px-3.5 py-3 rounded-md bg-slate-900/90 hover:bg-brand-blue border border-slate-800 hover:border-blue-400/40 text-slate-200 hover:text-white transition group shadow-sm">
+              <i data-lucide="phone-call" class="w-4 h-4 text-brand-accent group-hover:text-white shrink-0 transition"></i>
+              <span class="font-medium truncate">+54 9 341 691-4539</span>
+            </a>
+
+            <!-- Botón Correo -->
+            <a href="mailto:capolongojuan@gmail.com?subject=Consulta%20T%C3%A9cnica%20-%20JC%20Certificaciones" 
+               class="flex items-center gap-2.5 px-3.5 py-3 rounded-md bg-slate-900/90 hover:bg-brand-blue border border-slate-800 hover:border-blue-400/40 text-slate-200 hover:text-white transition group shadow-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-accent group-hover:text-white shrink-0 transition"></i>
+              <span class="font-medium truncate">capolongojuan@gmail.com</span>
+            </a>
+
+            <!-- Ubicación (Estática sin acción) -->
+            <div class="flex items-center gap-2.5 px-3.5 py-3 rounded-md bg-slate-900/50 border border-slate-800/80 text-slate-300 select-none cursor-default">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-accent shrink-0"></i>
+              <span class="truncate">Aduana Buenos Aires y Rosario</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FILA INFERIOR: Copyright | Firma de Desarrollo | Legales -->
+      <div class="pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        
+        <!-- Izquierda -->
+        <p class="text-center md:text-left">
+          © 2026 JC Certificación de Importaciones y Exportaciones.
+        </p>
+
+        <!-- Centro (Opcional: podés borrar este <p> si preferís no poner firma) -->
+        <p class="text-center">
+          Diseño y desarrollo web por <a href="#hero" class="text-slate-400 hover:text-white font-semibold transition">Tu Nombre / Estudio</a>
+        </p>
+
+        <!-- Derecha -->
+        <div class="flex items-center justify-center md:justify-end gap-3 text-slate-400">
+          <button id="open-privacy-btn" class="hover:text-white underline cursor-pointer transition">Políticas de Privacidad</button>
+          <span>•</span>
+          <button id="open-terms-btn" class="hover:text-white underline cursor-pointer transition">Términos de Servicio</button>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODALES LEGALES ================= -->
+  <div id="modal-privacy" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white text-slate-800 rounded-lg max-w-xl w-full p-6 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b pb-2">
+        <h3 class="font-bold text-base text-brand-navy">Políticas de Privacidad y Protección de Datos</h3>
+        <button class="close-modal text-slate-400 hover:text-slate-700 text-lg font-bold" data-modal="modal-privacy">&times;</button>
+      </div>
+      <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
+        <p>De conformidad con la Ley N° 25.326 de Protección de los Datos Personales de la República Argentina, los datos suministrados son tratados confidencialmente para elaborar presupuestos y asesoramiento técnico sobre certificaciones y gestión aduanera.</p>
+        <p>El titular puede ejercer su derecho de acceso, rectificación o supresión escribiendo a <strong>capolongojuan@gmail.com</strong>.</p>
+      </div>
+      <div class="text-right pt-2 border-t">
+        <button class="close-modal bg-brand-blue text-white text-xs px-4 py-2 rounded font-semibold" data-modal="modal-privacy">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-terms" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white text-slate-800 rounded-lg max-w-xl w-full p-6 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b pb-2">
+        <h3 class="font-bold text-base text-brand-navy">Términos del Servicio</h3>
+        <button class="close-modal text-slate-400 hover:text-slate-700 text-lg font-bold" data-modal="modal-terms">&times;</button>
+      </div>
+      <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
+        <p>El verificador técnico brinda una orientación preliminar y no sustituye el dictamen formal emitido por los organismos certificadores o laboratorios acreditados.</p>
+      </div>
+      <div class="text-right pt-2 border-t">
+        <button class="close-modal bg-brand-blue text-white text-xs px-4 py-2 rounded font-semibold" data-modal="modal-terms">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5493416914539?text=Hola%20Juan,%20quisiera%20asesoramiento%20sobre%20certificaciones,%20vigilancias%20o%20gestión%20aduanera." target="_blank" rel="noopener noreferrer" class="fixed bottom-5 right-5 bg-brand-blue hover:bg-brand-blueHover text-white p-3.5 rounded-full shadow-2xl border border-blue-400/40 transition-transform hover:scale-110 flex items-center justify-center z-40" aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+  </a>
+
+  <!-- Script JS -->
+  <script src="main.js"></script>
+</body>
+</html>
